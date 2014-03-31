@@ -15,9 +15,9 @@ Import the project to your IDE. The recommended build target for the project is
 Google APIs/API level 16.
 
 You need to make some changes to get the application to work:
-1. Insert your HERE apptoken and appid to the AndroidManifest.xml
-2. Insert your GoogleMaps v2 API KEY to the AndroidManifest.xml
-3. Insert your AdMob Ad unit ID to the MainActivity.java
+  1. Insert your HERE apptoken and appid to the AndroidManifest.xml
+  1. Insert your GoogleMaps v2 API KEY to the AndroidManifest.xml
+  1. Insert your AdMob Ad unit ID to the MainActivity.java
 
 This sample application requires Google Service library project and HERE 
 reference library for Google Maps Android API v2 to be added to the build path. 
