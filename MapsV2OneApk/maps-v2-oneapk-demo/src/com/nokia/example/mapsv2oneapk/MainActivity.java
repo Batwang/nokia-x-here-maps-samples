@@ -30,19 +30,23 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         if (validateMetaData()) {
-            Fragment fragment;
-            if (hasHere()) {
-                fragment = new MapsFragmentHere();
-            } else {
-                fragment = new MapsFragmentGoogle();
-            }
-            getSupportFragmentManager().beginTransaction().add(R.id.map, fragment).commit();
+            addMapFragment();
         } else {
             Toast.makeText(this, R.string.missing_metadata, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
 
+    }
+
+    private void addMapFragment() {
+        Fragment fragment;
+        if (hasHere()) {
+            fragment = new MapsFragmentHere();
+        } else {
+            fragment = new MapsFragmentGoogle();
+        }
+        getSupportFragmentManager().beginTransaction().add(R.id.map, fragment).commit();
     }
 
     /**
