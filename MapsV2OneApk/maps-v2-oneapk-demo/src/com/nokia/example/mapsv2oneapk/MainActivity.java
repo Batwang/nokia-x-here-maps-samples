@@ -14,11 +14,14 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class MainActivity extends FragmentActivity {
     private static final String HERE_LIBRARY = "com.here.android";
@@ -36,6 +39,10 @@ public class MainActivity extends FragmentActivity {
     /* Your ad unit id. Replace with your actual ad unit id. */
     private static final String AD_UNIT_ID = "YOUR_AD_UNIT_IT";
 
+    private static final String MY_INTERSTITIAL_UNIT_ID = "YOUR_INTERSTITIAL_AD_UNIT_IT";
+
+    private InterstitialAd interstitial;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +51,34 @@ public class MainActivity extends FragmentActivity {
         if (validateMetaData()) {
             addAd();
             addMapFragment();
+            createInterstitial();
+            Button button = (Button) findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (interstitial.isLoaded()) {
+                        interstitial.show();
+                    }
+                }
+            });
         } else {
             Toast.makeText(this, R.string.missing_metadata, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
 
+    }
+
+    private void createInterstitial() {
+        // Create the interstitial.
+        interstitial = new InterstitialAd(this);
+        interstitial.setAdUnitId(MY_INTERSTITIAL_UNIT_ID);
+
+        // Create ad request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Begin loading your interstitial.
+        interstitial.loadAd(adRequest);
     }
 
     @Override
