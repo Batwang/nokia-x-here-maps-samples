@@ -18,9 +18,27 @@ Import the project to your IDE. The recommended build target for the project is
 Google APIs/API level 16. 
 
 This sample application requires Support library and HERE reference library for
-Google Maps Android API v1 to be added to the build path. HERE reference library
-for Google Maps Android API v1 is hosted in a separate repository and added to
-this repository as a submodule.
+Google Maps Android API v1 to be added to the build path.
+
+### Wrapper submodule ###
+
+HERE reference library for Google Maps Android API v1 is hosted in
+[a separate repository](https://github.com/nokia-developer/nokia-x-here-maps-wrapper-v1)
+and added to this repository as a submodule. You need to update the submodule
+after cloning this sample. Updating the submodule will fetch the wrapper
+libraries from GitHub and place them into the correct directory for the
+application to use.
+
+**Updating submodules using git command:**
+
+```
+git submodule update –init
+```
+
+**Updating submodules using TortoiseGit:**
+
+1. Right click on project (MapsV1OneApk)
+2. Select TortoiseGit -> Submodule Update
 
 ### Building with Gradle ###
 
