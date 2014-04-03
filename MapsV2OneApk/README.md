@@ -56,7 +56,7 @@ To build and run the sample application with Eclipse, follow these steps:
    only when trying the sample in a device with Google Maps.)
 4. In the same manner, import the **Google Play Services library** and
    **Google Play Services reference library** into Eclipse. (See the 
-   Android Developers website](http://developer.android.com/google/play-services/setup.html)
+   [Android Developers website](http://developer.android.com/google/play-services/setup.html)
    for more details on the Google Play Services library project.)
 5. Right-click on the sample project, select **Android Tools > Add Support
    Library**
