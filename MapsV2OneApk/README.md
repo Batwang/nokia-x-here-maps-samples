@@ -62,8 +62,9 @@ To build and run the sample application with Eclipse, follow these steps:
    Library**
 6. Right-click on the sample project, open the **Properties** dialog, and select
    the **Android** option from the left column. Ensure that the Google Play
-   Services library and HERE reference library is added to the project as a
-   Project Library.
+   Services library and
+   [HERE reference library](https://github.com/nokia-developer/nokia-x-here-maps-wrapper-v2)
+   is added to the project as a Project Library.
 7. From the same **Properties** dialog, ensure that the project build target is
    set to **Google APIs**.
 8. Next, select the **Java Build Path** option from the left column. Select the
