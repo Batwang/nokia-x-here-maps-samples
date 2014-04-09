@@ -2,8 +2,8 @@ HERE API sample: MapsDemo
 ==============================
 
 This Nokia sample illustrates how to implement Google Maps v1, v2, and HERE Maps
-offering in a single APK, and how to select the maps implementation to be used
-run-time. This sample is especially useful should you already have an
+offering in a single project, and how to select the maps implementation to be
+used run-time. This sample is especially useful should you already have an
 application using either Google Maps v1 or v2 in terms of demonstrating how to
 add HERE Maps alongside your original implementation.
 
