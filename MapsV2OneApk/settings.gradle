@@ -3,4 +3,4 @@
  * See the license text file delivered with this project for more information.
  */
 
-include ':maps-v2-oneapk-demo', ':nokia-x-here-maps-wrapper-v2'
+include ':maps-v2-oneapk-demo'
