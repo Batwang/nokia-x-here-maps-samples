@@ -17,7 +17,8 @@ import java.util.HashMap;
  *
  */
 public class MapsApplication extends Application {
-    private static final int PROPERTY_ID = 84766791;
+//    private static final int PROPERTY_ID = R.xml.app_tracker;
+    private static final String TRACKING_ID = "UA-49990653-1";
 
     // https://developers.google.com/analytics/devguides/collection/android/v4/#manifest
 
@@ -40,7 +41,7 @@ public class MapsApplication extends Application {
         if (!mTrackers.containsKey(trackerId)) {
 
             GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-            Tracker t = (trackerId == TrackerName.APP_TRACKER) ? analytics.newTracker(PROPERTY_ID)
+            Tracker t = (trackerId == TrackerName.APP_TRACKER) ? analytics.newTracker(TRACKING_ID)
                     : (trackerId == TrackerName.GLOBAL_TRACKER) ? analytics.newTracker(R.xml.global_tracker)
                     : analytics.newTracker(R.xml.ecommerce_tracker);
             mTrackers.put(trackerId, t);
