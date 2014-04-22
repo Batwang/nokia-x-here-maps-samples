@@ -10,6 +10,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.nokia.android.gms.maps.GoogleMap;
 import com.nokia.android.gms.maps.SupportMapFragment;
 import com.nokia.android.gms.maps.model.LatLng;
@@ -47,5 +49,16 @@ public class MapsFragmentHere extends Fragment {
         GoogleMap map = mapFragment.getMap();
         MarkerOptions marker = new MarkerOptions().position(new LatLng(0, 0)).title("Marker");
         map.addMarker(marker);
+
+        // Get tracker.
+        Tracker t = ((MapsApplication) getActivity().getApplication()).getTracker(
+                MapsApplication.TrackerName.APP_TRACKER);
+
+        // Set screen name.
+        // Where path is a String representing the screen name.
+        t.setScreenName(MapsFragmentHere.class.getName());
+
+        // Send a screen view.
+        t.send(new HitBuilders.AppViewBuilder().build());
     }
 }
