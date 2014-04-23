@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
 apply plugin: 'android'
@@ -81,5 +81,5 @@ dependencies {
     // The Google Repository (separate from the corresponding library) can be found in the Extras category.
     // compile 'com.google.android.gms:play-services:4.0.+'
     compile 'com.android.support:support-v4:+'
-    compile files('../nokia-x-here-maps-wrapper-v1/com.nokia.android.maps.sdk.jar')
+    compile files('libs/com.nokia.android.maps.sdk.jar')
 }
