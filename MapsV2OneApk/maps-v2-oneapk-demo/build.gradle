@@ -79,7 +79,7 @@ if (project.hasProperty('STORE_FILE') &&
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services:4.0.+'
+    compile 'com.google.android.gms:play-services:4.3.+'
     compile 'com.nokiax:nokia-x-here-maps-wrapper-v2:0.0.1@aar'
     compile files('libs/com.nokia.android.gms.maps.jar')
 }
